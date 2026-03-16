@@ -5,35 +5,35 @@
 ## day 10
 ##
 
-SRC	=	adv_sort_warray.c\
-		arrdup.c	\
-		arrlen.c	\
-		astrcat.c	\
-		charisauth.c	\
-		isfreeable.c	\
-		load_file.c	\
-		my_getnbr.c	\
-		myputerr.c	\
-		myputnbr.c	\
-		myputnstr.c	\
-		myputstr.c	\
-		mystrcat.c	\
-		mystrchr.c	\
-		mystrcmp.c	\
-		mystrcpy.c	\
-		mystrdup.c	\
-		mystrlen.c	\
-		mystrncat.c	\
-		mystrncmp.c	\
-		mystrncpy.c	\
-		mystrndup.c	\
-		mystrnlen.c	\
-		numlen.c	\
-		show_warray.c	\
-		strisauth.c	\
-		stwa_delimiter.c\
+LIB	+=	adv_sort_warray.c
+LIB	+=	arrdup.c
+LIB	+=	arrlen.c
+LIB	+=	astrcat.c
+LIB	+=	charisauth.c
+LIB	+=	isfreeable.c
+LIB	+=	load_file.c
+LIB	+=	my_getnbr.c
+LIB	+=	myputerr.c
+LIB	+=	myputnbr.c
+LIB	+=	myputnstr.c
+LIB	+=	myputstr.c
+LIB	+=	mystrcat.c
+LIB	+=	mystrchr.c
+LIB	+=	mystrcmp.c
+LIB	+=	mystrcpy.c
+LIB	+=	mystrdup.c
+LIB	+=	mystrlen.c
+LIB	+=	mystrncat.c
+LIB	+=	mystrncmp.c
+LIB	+=	mystrncpy.c
+LIB	+=	mystrndup.c
+LIB	+=	mystrnlen.c
+LIB	+=	numlen.c
+LIB	+=	show_warray.c
+LIB	+=	strisauth.c
+LIB	+=	stwa_delimiter.c
 
-OBJ	=	$(SRC:.c=.o)
+OBJ	=	$(LIB:.c=.o)
 
 NAME	=	libmy.a
 
