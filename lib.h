@@ -40,6 +40,6 @@ char **arrdup(char **);
 char *strcutd(const char *, const char *);
 void isfreeable(char **, char *);
 
-char **stwa_delimiter(const char *, const char *);
+char **stwa_delimiter(const char *, const char *, int, int);
 
 #endif

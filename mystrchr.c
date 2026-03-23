@@ -11,12 +11,10 @@
 
 ssize_t mystrchr(char *str, char *delim)
 {
-    size_t i = 0;
-
     if (!str)
         return (ssize_t)-1;
-    for (; str[i]; i++)
-        if (charisauth(str[i], delim) == 1)
+    for (size_t i = 0; str[i]; i++)
+        if (charisauth(str[i], delim))
             return i;
     return (ssize_t)-1;
 }
