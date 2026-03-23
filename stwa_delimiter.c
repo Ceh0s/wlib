@@ -48,7 +48,7 @@ static char *find_words(const char *str, size_t loc, const char *delim,
 
     if (!is_delim(str, delim, didx))
         count++;
-    i = didx == 1 && count == 1 ? mystrlen(delim) : 0;
+    i = didx == 1 && count == 1 ? lend : 0;
     for (; count < loc && str[i]; i += lend)
         if (is_delim(str + i, delim, didx)
             && !is_delim(str + i + lend, delim, didx))
