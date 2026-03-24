@@ -22,6 +22,7 @@ int strisauth(const char *, const char *, int);
 int mystrcmp(const char *, const char *);
 int mystrncmp(char const *, char const *, size_t);
 ssize_t mystrchr(char *, char *);
+ssize_t countocc(char *, char *);
 
 ssize_t mystrnlen(const char *, size_t);
 ssize_t mystrlen(const char *);

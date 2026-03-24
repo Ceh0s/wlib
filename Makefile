@@ -10,6 +10,7 @@ LIB	+=	arrdup.c
 LIB	+=	arrlen.c
 LIB	+=	astrcat.c
 LIB	+=	charisauth.c
+LIB	+=	countocc.c
 LIB	+=	isfreeable.c
 LIB	+=	load_file.c
 LIB	+=	my_getnbr.c
