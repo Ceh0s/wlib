@@ -12,7 +12,6 @@
 
 #include "lib.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static int is_delim(const char *str, const char *delim, int didx)
 {
@@ -24,36 +23,44 @@ static int is_delim(const char *str, const char *delim, int didx)
 static size_t count_words(const char *str, const char *delim,
     int didx, int empty)
 {
-    size_t count = 0;
-    size_t lend = didx == 1 ? mystrlen(delim) : 1;
+    size_t count = (str && empty == 1) ? 1 : 0;
+    size_t lend = (didx == 1) ? mystrlen(delim) : 1;
+    int in_word = 0;
 
     if (!str)
-        return count;
-    if (!is_delim(str, delim, didx))
-        count++;
-    for (size_t i = didx == 1 && count == 1 ? lend : 0; str[i]; i += lend)
-        if (is_delim(str + i, delim, didx)
-            && !is_delim(str + i + lend, delim, didx))
-            count++;
+        return 0;
+    for (size_t i = 0; str[i];)
+        if (is_delim(str + i, delim, didx)) {
+            count += empty;
+            in_word = 0;
+            i += lend;
+        } else {
+            count += (in_word == 0 && empty == 0) ? 1 : 0;
+            in_word = 1;
+            i++;
+        }
     return count;
 }
 
 static char *find_words(const char *str, size_t loc, const char *delim,
-    int didx)
+    int *opt)
 {
     size_t i = 0;
+    size_t count = (opt[1] == 1) ? 1 : 0;
+    size_t lend = (opt[0] == 1) ? mystrlen(delim) : 1;
     size_t len = 0;
-    size_t count = 0;
-    size_t lend = didx == 1 ? mystrlen(delim) : 1;
 
-    if (!is_delim(str, delim, didx))
-        count++;
-    i = didx == 1 && count == 1 ? lend : 0;
-    for (; count < loc && str[i]; i += lend)
-        if (is_delim(str + i, delim, didx)
-            && !is_delim(str + i + lend, delim, didx))
-            count++;
-    for (size_t x = i; !is_delim(str + x, delim, didx) && str[x]; x++)
+    for (int in_word = 0; str[i] && count < loc;)
+        if (is_delim(str + i, delim, opt[0])) {
+            count += opt[1];
+            in_word = 0;
+            i += lend;
+        } else {
+            count += (in_word == 0 && opt[1] == 0) ? 1 : 0;
+            in_word = 1;
+            i += (count < loc) ? 1 : 0;
+        }
+    while (str[i + len] && !is_delim(str + i + len, delim, opt[0]))
         len++;
     return mystrndup(str + i, len);
 }
@@ -68,7 +75,7 @@ char **stwa_delimiter(const char *str, const char *delim, int didx, int empty)
     if (!arr)
         return NULL;
     for (; i < words; i++)
-        arr[i] = find_words(str, i + 1, delim, didx);
+        arr[i] = find_words(str, i + 1, delim, (int[2]){didx, empty});
     arr[i] = NULL;
     return arr;
 }
