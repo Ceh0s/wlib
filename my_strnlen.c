@@ -6,6 +6,7 @@
 */
 
 #include "lib.h"
+#include <sys/types.h>
 
 ssize_t my_strnlen(char const *str, size_t n)
 {
