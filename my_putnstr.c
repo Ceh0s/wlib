@@ -8,12 +8,12 @@
 #include "lib.h"
 #include <unistd.h>
 
-void myputnstr(const char *str, size_t n)
+void my_putnstr(const char *str, size_t n)
 {
     ssize_t len = 0;
 
     if (!str)
         return;
-    len = mystrnlen(str, n);
+    len = my_strnlen(str, n);
     write(1, str, len);
 }

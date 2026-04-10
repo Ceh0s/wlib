@@ -7,7 +7,7 @@
 
 #include "lib.h"
 
-ssize_t mystrnlen(char const *str, size_t n)
+ssize_t my_strnlen(char const *str, size_t n)
 {
     ssize_t i = 0;
 

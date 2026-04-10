@@ -8,9 +8,9 @@
 #include "lib.h"
 #include <unistd.h>
 
-void myputstr(const char *str)
+void my_putstr(const char *str)
 {
     if (!str)
         return;
-    write(1, str, mystrlen(str));
+    write(1, str, my_strlen(str));
 }

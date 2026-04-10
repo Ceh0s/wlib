@@ -8,15 +8,15 @@
 #include "lib.h"
 #include <stdlib.h>
 
-char *mystrdup(const char *src)
+char *my_strdup(const char *src)
 {
     char *dest = NULL;
 
     if (!src)
         return NULL;
-    dest = malloc(sizeof(char) * (mystrlen(src) + 1));
+    dest = malloc(sizeof(char) * (my_strlen(src) + 1));
     if (!dest)
         return NULL;
-    mystrcpy(dest, src);
+    my_strcpy(dest, src);
     return dest;
 }

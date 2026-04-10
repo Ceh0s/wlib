@@ -9,13 +9,12 @@
 #include "lib.h"
 #include <stdlib.h>
 
-void isfreeable(char **arr, char *str)
+void is_freeable(char **arr, char *str)
 {
-    if (str)
-        free(str);
-    if (arr) {
-        for (int i = 0; arr[i]; i++)
-            free(arr[i]);
-        free(arr);
-    }
+    free(str);
+    if (!arr)
+        return;
+    for (int i = 0; arr[i]; i++)
+        free(arr[i]);
+    free(arr);
 }

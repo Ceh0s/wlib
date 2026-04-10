@@ -13,7 +13,7 @@ void show_warray(char **tab)
     if (!tab)
         return;
     for (int a = 0; tab[a]; a++) {
-        myputstr(tab[a]);
+        my_putstr(tab[a]);
         write(1, "\n", 1);
     }
 }

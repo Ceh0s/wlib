@@ -8,12 +8,12 @@
 #include "lib.h"
 #include <stddef.h>
 
-char *mystrcat(char *dest, const char *src)
+char *my_strcat(char *dest, const char *src)
 {
-    ssize_t len = mystrlen(dest);
+    ssize_t len = my_strlen(dest);
 
     if (!src || len == -1)
         return dest;
-    mystrcpy(&dest[len], src);
+    my_strcpy(&dest[len], src);
     return dest;
 }

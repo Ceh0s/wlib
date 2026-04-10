@@ -7,7 +7,7 @@
 
 #include "lib.h"
 
-int numlen(long long nb)
+int num_len(long long nb)
 {
     int len = 1;
     unsigned long long n = nb < 0 ? -nb : nb;

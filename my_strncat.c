@@ -8,12 +8,12 @@
 #include "lib.h"
 #include <stddef.h>
 
-char *mystrncat(char *dest, const char *src, size_t n)
+char *my_strncat(char *dest, const char *src, size_t n)
 {
-    size_t len = mystrlen(dest);
+    size_t len = my_strlen(dest);
 
     if (src == NULL)
         return dest;
-    mystrncpy(&dest[len], src, n);
+    my_strncpy(&dest[len], src, n);
     return dest;
 }

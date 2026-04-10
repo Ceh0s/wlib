@@ -7,13 +7,13 @@
 
 #include "lib.h"
 
-char *mystrncpy(char *dest, const char *src, size_t n)
+char *my_strcpy(char *dest, const char *src)
 {
     size_t i = 0;
 
     if (!src || !dest)
         return dest;
-    for (; src[i] != '\0' && i < n; i++)
+    for (; src[i] != '\0'; i++)
         dest[i] = src[i];
     dest[i] = '\0';
     return dest;

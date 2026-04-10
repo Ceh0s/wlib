@@ -7,7 +7,7 @@
 
 #include "lib.h"
 
-ssize_t mystrlen(char const *str)
+ssize_t my_strlen(char const *str)
 {
     ssize_t i = 0;
 

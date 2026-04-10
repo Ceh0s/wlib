@@ -8,11 +8,11 @@
 #include "lib.h"
 #include <stdlib.h>
 
-char *astrcat(const char *a, const char *b)
+char *my_astrcat(const char *a, const char *b)
 {
-    char *res = malloc(sizeof(char) * (mystrlen(a) + mystrlen(b) + 1));
+    char *res = malloc(sizeof(char) * (my_strlen(a) + my_strlen(b) + 1));
 
-    mystrcpy(res, a);
-    mystrcat(res, b);
+    my_strcpy(res, a);
+    my_strcat(res, b);
     return res;
 }

@@ -8,7 +8,7 @@
 
 #include "lib.h"
 
-int mystrcmp2(const char *s1, const char *s2)
+int my_strcmp_bool(const char *s1, const char *s2)
 {
     size_t i = 0;
 
@@ -21,10 +21,12 @@ int mystrcmp2(const char *s1, const char *s2)
     for (; s1[i] != '\0' || s2[i] != '\0'; i++)
         if (s1[i] != s2[i])
             return s1[i] - s2[i] > 0 ? 1 : -1;
+    if (s1[i] != s2[i])
+        return s1[i] - s2[i] > 0 ? 1 : -1;
     return 0;
 }
 
-int mystrcmp(const char *s1, const char *s2)
+int my_strcmp(const char *s1, const char *s2)
 {
     size_t i = 0;
 
@@ -37,5 +39,5 @@ int mystrcmp(const char *s1, const char *s2)
     for (; s1[i] != '\0' || s2[i] != '\0'; i++)
         if (s1[i] != s2[i])
             return s1[i] - s2[i];
-    return 0;
+    return s1[i] - s2[i];
 }

@@ -8,8 +8,8 @@
 #include "lib.h"
 #include <unistd.h>
 
-int myputerr(const char *str, int return_value)
+int my_puterr(const char *str, int return_value)
 {
-    write(2, str, mystrlen(str));
+    write(2, str, my_strlen(str));
     return return_value;
 }

@@ -7,7 +7,7 @@
 
 #include "lib.h"
 
-ssize_t arrlen(char **arr)
+ssize_t arr_len(char **arr)
 {
     ssize_t len = 0;
 

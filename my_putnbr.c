@@ -8,9 +8,9 @@
 #include "lib.h"
 #include <unistd.h>
 
-int myputnbr(long long nb)
+int my_putnbr(long long nb)
 {
-    int len = numlen(nb);
+    int len = num_len(nb);
     char str[len + 1];
     unsigned long long n = nb < 0 ? -nb : nb;
     int i = len - 1;
