@@ -5,7 +5,7 @@
 ## day 10
 ##
 
-LIB	+=	adv_sort_warray.c
+LIB	=	adv_sort_warray.c
 LIB	+=	arr_dup.c
 LIB	+=	arr_len.c
 LIB	+=	my_astrcat.c
