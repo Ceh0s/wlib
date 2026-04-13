@@ -65,6 +65,8 @@ static char *find_words(const char *str, size_t loc, const char *delim,
     return my_strndup(str + i, len);
 }
 
+#include <stdio.h>
+
 char **stwa_delimiter(const char *str, const char *delim, int didx, int empty)
 {
     size_t i = 0;
