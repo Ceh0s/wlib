@@ -14,7 +14,6 @@ LIB	+=	count_occ.c
 LIB	+=	is_freeable.c
 LIB	+=	load_file.c
 LIB	+=	my_getnbr.c
-LIB	+=	my_puterr.c
 LIB	+=	my_putnbr.c
 LIB	+=	my_putnstr.c
 LIB	+=	my_putstr.c
