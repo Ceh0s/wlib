@@ -12,9 +12,8 @@
     #include <sys/types.h>
 
 int my_putnbr(long long);
-void my_putstr(const char *);
-void my_putnstr(const char *, size_t);
-int my_puterr(const char *, int);
+int my_putstr(int, const char *, int);
+int my_putnstr(int, const char *, int, size_t);
 void show_warray(char **);
 
 int char_is_auth(char, const char *);

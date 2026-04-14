@@ -6,6 +6,7 @@
 */
 
 #include "lib.h"
+#include <sys/types.h>
 
 ssize_t arr_len(char **arr)
 {
