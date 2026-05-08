@@ -68,10 +68,9 @@ static char *find_words(const char *str, size_t loc, const char *delim,
 char **stwa_delimiter(const char *str, const char *delim, int didx, int empty)
 {
     size_t i = 0;
-    char **arr = NULL;
     size_t words = count_words(str, delim, didx, empty);
+    char **arr = malloc(sizeof(char *) * (words + 1));
 
-    arr = malloc(sizeof(char *) * (words + 1));
     if (!arr)
         return NULL;
     for (; i < words; i++)
