@@ -16,15 +16,15 @@
 static int is_delim(const char *str, const char *delim, int didx)
 {
     if (didx == 0)
-        return charisauth(*str, delim);
-    return (!mystrncmp(str, delim, mystrlen(delim)));
+        return char_is_auth(*str, delim);
+    return (!my_strncmp(str, delim, my_strlen(delim)));
 }
 
 static size_t count_words(const char *str, const char *delim,
     int didx, int empty)
 {
     size_t count = (str && empty == 1) ? 1 : 0;
-    size_t lend = (didx == 1) ? mystrlen(delim) : 1;
+    size_t lend = (didx == 1) ? my_strlen(delim) : 1;
     int in_word = 0;
 
     if (!str)
@@ -47,7 +47,7 @@ static char *find_words(const char *str, size_t loc, const char *delim,
 {
     size_t i = 0;
     size_t count = (opt[1] == 1) ? 1 : 0;
-    size_t lend = (opt[0] == 1) ? mystrlen(delim) : 1;
+    size_t lend = (opt[0] == 1) ? my_strlen(delim) : 1;
     size_t len = 0;
 
     for (int in_word = 0; str[i] && count < loc;)
@@ -62,7 +62,7 @@ static char *find_words(const char *str, size_t loc, const char *delim,
         }
     while (str[i + len] && !is_delim(str + i + len, delim, opt[0]))
         len++;
-    return mystrndup(str + i, len);
+    return my_strndup(str + i, len);
 }
 
 char **stwa_delimiter(const char *str, const char *delim, int didx, int empty)
