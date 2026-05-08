@@ -8,10 +8,10 @@
 #include "lib.h"
 #include <stdlib.h>
 
-char **arrdup(char **arr)
+char **arr_dup(char **arr)
 {
     char **dup = NULL;
-    size_t i = arrlen(arr);
+    size_t i = arr_len(arr);
 
     if (i == 0)
         return NULL;
@@ -19,7 +19,7 @@ char **arrdup(char **arr)
     if (!dup)
         return NULL;
     for (i = 0; arr[i]; i++)
-        dup[i] = mystrdup(arr[i]);
+        dup[i] = my_strdup(arr[i]);
     dup[i] = NULL;
     return dup;
 }

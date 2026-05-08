@@ -8,7 +8,7 @@
 
 #include "lib.h"
 
-int mystrcmp2(const char *s1, const char *s2)
+int my_strcmp_bool(const char *s1, const char *s2)
 {
     size_t i = 0;
 
@@ -24,7 +24,7 @@ int mystrcmp2(const char *s1, const char *s2)
     return 0;
 }
 
-int mystrcmp(const char *s1, const char *s2)
+int my_strcmp(const char *s1, const char *s2)
 {
     size_t i = 0;
 

@@ -8,7 +8,7 @@
 
 #include "lib.h"
 
-int mystrncmp(char const *s1, char const *s2, size_t n)
+int my_strncmp(char const *s1, char const *s2, size_t n)
 {
     size_t i = 0;
 

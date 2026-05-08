@@ -9,12 +9,12 @@
 
 #include "lib.h"
 
-ssize_t mystrchr(char *str, char *delim)
+ssize_t my_strchr(char *str, char *delim)
 {
     if (!str)
         return (ssize_t)-1;
     for (size_t i = 0; str[i]; i++)
-        if (charisauth(str[i], delim))
+        if (char_is_auth(str[i], delim))
             return i;
     return (ssize_t)-1;
 }

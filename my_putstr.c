@@ -8,9 +8,10 @@
 #include "lib.h"
 #include <unistd.h>
 
-void myputstr(const char *str)
+int my_putstr(int fd, const char *str, int return_value)
 {
     if (!str)
-        return;
-    write(1, str, mystrlen(str));
+        return return_value;
+    write(fd, str, my_strlen(str));
+    return return_value;
 }

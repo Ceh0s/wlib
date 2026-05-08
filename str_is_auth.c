@@ -8,12 +8,12 @@
 
 #include "lib.h"
 
-int strisauth(const char *str, const char *auth, int toggle)
+int str_is_auth(const char *str, const char *auth, int toggle)
 {
     if (!str)
         return 1;
     for (int i = 0; str[i] != '\0'; i++)
-        if (charisauth(str[i], auth) == toggle)
+        if (char_is_auth(str[i], auth) == toggle)
             return 0;
     return 1;
 }

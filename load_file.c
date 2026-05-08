@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** load file in mem
+** load file
 ** File description:
 ** self explanatory
 */

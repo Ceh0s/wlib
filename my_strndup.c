@@ -8,15 +8,15 @@
 #include "lib.h"
 #include <stdlib.h>
 
-char *mystrndup(const char *src, size_t n)
+char *my_strndup(const char *src, size_t n)
 {
     char *dest = NULL;
 
     if (!src)
         return NULL;
-    dest = malloc(sizeof(char) * (mystrnlen(src, n) + 1));
+    dest = malloc(sizeof(char) * (my_strnlen(src, n) + 1));
     if (!dest)
         return NULL;
-    mystrncpy(dest, src, n);
+    my_strncpy(dest, src, n);
     return dest;
 }

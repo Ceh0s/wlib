@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-int charisauth(char c, const char *auth)
+int char_is_auth(char c, const char *auth)
 {
     for (size_t i = 0; auth[i]; i++)
         if (c == auth[i])
