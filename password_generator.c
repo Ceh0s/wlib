@@ -2,8 +2,8 @@
 ** EPITECH PROJECT, 2026
 ** password_generator.c
 ** File description:
-** randomly generates a password of length _len_ based on _auth_ character
-** array, or from a list of ascii characters if the latter parameter is null.
+** randomly generates a password of length _len_ based on _auth_ string
+** array, or from all printable ascii characters if it's set to NULL.
 ** --
 ** _len_ defines the length of the password to be generated. if it's zero, _len_
 ** is set to 16 by default.
