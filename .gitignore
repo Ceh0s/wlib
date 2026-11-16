@@ -1,5 +1,4 @@
 test
-password_generator.c
 main.c
 *.o
 *.a
