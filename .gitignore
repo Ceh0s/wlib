@@ -1,4 +1,5 @@
 test
+private
 main.c
 *.o
 *.a
