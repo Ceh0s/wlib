@@ -6,6 +6,7 @@
 */
 
 #include "lib.h"
+#include <limits.h>
 
 static int fill_number(char const *str, long nb, int len)
 {
@@ -17,17 +18,13 @@ static int fill_number(char const *str, long nb, int len)
     if (i < len)
         nb *= str[i] - 48;
     for (i++; i < len; i++) {
-        if (((nb * 10) + (str[i] - 48)) > 2147483647 ||
-            ((nb * 10) - (str[i] - 48)) < -2147483648)
-            return 0;
         nb *= 10;
         if (nb >= 0)
             nb += str[i] - 48;
         else
             nb -= str[i] - 48;
     }
-    i = nb;
-    return i;
+    return (int)nb;
 }
 
 static int find_number_length(char const *str, int sign)
