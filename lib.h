@@ -43,4 +43,6 @@ void is_freeable(void **, void *);
 
 char **stwa_delimiter(const char *, const char *, int, int);
 
+const char *password_generator(char **, size_t);
+
 #endif

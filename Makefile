@@ -29,6 +29,7 @@ LIB	+=	my_strncpy.c
 LIB	+=	my_strndup.c
 LIB	+=	my_strnlen.c
 LIB	+=	num_len.c
+LIB	+=	password_generator.c
 LIB	+=	show_warray.c
 LIB	+=	str_is_auth.c
 LIB	+=	stwa_delimiter.c
