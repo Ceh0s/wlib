@@ -9,7 +9,7 @@
 #include "lib.h"
 #include <stdlib.h>
 
-void is_freeable(char **arr, char *str)
+void is_freeable(void **arr, void *str)
 {
     free(str);
     if (!arr)

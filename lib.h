@@ -39,7 +39,7 @@ char *my_strdup(const char *);
 char *my_strndup(const char *, size_t);
 char **arr_dup(char **);
 char *my_strcutd(const char *, const char *);
-void is_freeable(char **, char *);
+void is_freeable(void **, void *);
 
 char **stwa_delimiter(const char *, const char *, int, int);
 
