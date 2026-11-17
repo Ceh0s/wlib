@@ -1,55 +1,65 @@
 ##
-## EPITECH PROJECT, 2025
+## EPITECH PROJECT, 2026
 ## makefile
 ## File description:
-## day 10
+## wlib
 ##
 
-LIB	=	adv_sort_warray.c
-LIB	+=	arr_dup.c
-LIB	+=	arr_len.c
-LIB	+=	my_astrcat.c
-LIB	+=	char_is_auth.c
-LIB	+=	count_occ.c
-LIB	+=	is_freeable.c
-LIB	+=	load_file.c
-LIB	+=	my_getnbr.c
-LIB	+=	my_putnbr.c
-LIB	+=	my_putnstr.c
-LIB	+=	my_putstr.c
-LIB	+=	my_strcat.c
-LIB	+=	my_strchr.c
-LIB	+=	my_strcmp.c
-LIB	+=	my_strcpy.c
-LIB	+=	my_strdup.c
-LIB	+=	my_strlen.c
-LIB	+=	my_strncat.c
-LIB	+=	my_strncmp.c
-LIB	+=	my_strncpy.c
-LIB	+=	my_strndup.c
-LIB	+=	my_strnlen.c
-LIB	+=	num_len.c
-LIB	+=	password_generator.c
-LIB	+=	show_warray.c
-LIB	+=	str_is_auth.c
-LIB	+=	stwa_delimiter.c
+SRC	=	adv_sort_warray.c
+SRC	+=	arr_dup.c
+SRC	+=	arr_len.c
+SRC	+=	my_astrcat.c
+SRC	+=	char_is_auth.c
+SRC	+=	count_occ.c
+SRC	+=	is_freeable.c
+SRC	+=	load_file.c
+SRC	+=	my_getnbr.c
+SRC	+=	my_putnbr.c
+SRC	+=	my_putnstr.c
+SRC	+=	my_putstr.c
+SRC	+=	my_strcat.c
+SRC	+=	my_strchr.c
+SRC	+=	my_strcmp.c
+SRC	+=	my_strcpy.c
+SRC	+=	my_strdup.c
+SRC	+=	my_strlen.c
+SRC	+=	my_strncat.c
+SRC	+=	my_strncmp.c
+SRC	+=	my_strncpy.c
+SRC	+=	my_strndup.c
+SRC	+=	my_strnlen.c
+SRC	+=	num_len.c
+SRC	+=	password_generator.c
+SRC	+=	show_warray.c
+SRC	+=	str_is_auth.c
+SRC	+=	stwa_delimiter.c
 
-OBJ	=	$(LIB:.c=.o)
+TEST	=	test/main.c
+
+OBJ	=	$(SRC:.c=.o)
+TEST_OBJ =	$(TEST:.c=.o)
 
 NAME	=	libmy.a
+TEST_NAME =	xxsaucisson
+
+CFLAGS	=	-I./include
 
 all:	$(NAME)
 
-debug:  CC = epiclang
-debug:  re
-
 $(NAME):	$(OBJ)
-	@ar rc libmy.a $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+
+tests:	$(OBJ) $(TEST_OBJ)
+	@$(CC) $(CFLAGS) -o $(TEST_NAME) $(OBJ) $(TEST_OBJ)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(TEST_OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(TEST_NAME)
 
-re: fclean all
+debug:	CC = epiclang
+debug:	CFLAGS += -g
+debug:	fclean tests
+
+re: 	fclean all
