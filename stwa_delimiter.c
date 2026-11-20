@@ -3,9 +3,12 @@
 ** str to word array delimiter
 ** File description:
 ** home at last
+** --
 ** splits a string pointed to by _str_ into an array of words
+** --
 ** _didx_ determines if _str_ is cut using the characters from _delim_
 ** or using the _delim_ string itself (1 for the latter)
+** --
 ** _empty_ determines if two consecutive delimiters translates to an
 ** empty string in the array (1 if so)
 */
